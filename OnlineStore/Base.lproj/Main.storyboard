@@ -64,19 +64,10 @@
                                 </cells>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search products" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rU-IK-c9C">
-                                <rect key="frame" x="105" y="74" width="204" height="34"/>
+                                <rect key="frame" x="105" y="74" width="279" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLd-5x-JLA">
-                                <rect key="frame" x="339" y="74" width="45" height="31"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
-                                <connections>
-                                    <action selector="searchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="InD-5f-4Pq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRm-SN-0pY">
                                 <rect key="frame" x="30" y="74" width="45" height="31"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,15 +99,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o1H-lH-Wvj" secondAttribute="bottom" constant="20" id="8ad-Pq-YOy"/>
                             <constraint firstItem="mRm-SN-0pY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="9Zg-jY-Cs8"/>
                             <constraint firstItem="q2B-AQ-Rdi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="A6K-DJ-Vqp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iLd-5x-JLA" secondAttribute="trailing" constant="30" id="Q4A-XR-5IU"/>
-                            <constraint firstItem="iLd-5x-JLA" firstAttribute="leading" secondItem="7rU-IK-c9C" secondAttribute="trailing" constant="30" id="Qm5-uo-gA2"/>
                             <constraint firstItem="mRm-SN-0pY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="VQq-H0-b5c"/>
                             <constraint firstAttribute="bottom" secondItem="q2B-AQ-Rdi" secondAttribute="bottom" id="VZC-vM-p2L"/>
                             <constraint firstItem="o1H-lH-Wvj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="W8m-AE-B9x"/>
                             <constraint firstItem="7rU-IK-c9C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="ak7-bc-N59"/>
                             <constraint firstItem="7rU-IK-c9C" firstAttribute="leading" secondItem="mRm-SN-0pY" secondAttribute="trailing" constant="30" id="dx1-qs-o76"/>
-                            <constraint firstItem="iLd-5x-JLA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="fIa-dL-2Cz"/>
                             <constraint firstItem="q2B-AQ-Rdi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-15" id="kwe-D9-qRm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7rU-IK-c9C" secondAttribute="trailing" constant="30" id="rIe-S1-xiR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o1H-lH-Wvj" secondAttribute="trailing" constant="30" id="yvR-EP-PuP"/>
                         </constraints>
                     </view>
@@ -134,7 +123,6 @@
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

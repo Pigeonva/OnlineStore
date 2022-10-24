@@ -11,7 +11,7 @@ import SDWebImage
 class ViewController: UIViewController {
     
     //MARK: - IBOutlets
-
+    
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBOutlet weak var cartButton: UIButton!
@@ -33,14 +33,17 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-       
+        searchTextField.delegate = self
+        searchTextField.delegate = self
+        
+        
     }
     
     //MARK: - IBActions
     
     @IBAction func searchTapped(_ sender: UIButton) {
         if let text = searchTextField.text {
-        filter(by: text)
+            filter(by: text)
         }
     }
     
@@ -91,6 +94,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let url = URL(string: products[indexPath.row].image)
         cell.imageView.sd_setImage(with: url, completed: nil)
         cell.label.text = String("\(products[indexPath.row].price) $")
+        cell.layer.cornerRadius = 10
         
         return cell
     }
@@ -104,5 +108,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let spase = (collectionView.frame.size.width - 15)/2
         
         return CGSize(width: spase, height: spase)
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { [weak self] _ in
+            if let text = textField.text {
+                self?.filter(by: text)
+            }
+        })
     }
 }
