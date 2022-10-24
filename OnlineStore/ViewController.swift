@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     //MARK: - let/var
     
+    var allProducts: [ProductModel] = []
     var products: [ProductModel] = []
     
     //MARK: - Lifecycle methods
@@ -29,7 +30,6 @@ class ViewController: UIViewController {
         
         cartButton.layer.cornerRadius = cartButton.frame.width / 2
         getProducts()
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -39,7 +39,9 @@ class ViewController: UIViewController {
     //MARK: - IBActions
     
     @IBAction func searchTapped(_ sender: UIButton) {
-        
+        if let text = searchTextField.text {
+        filter(by: text)
+        }
     }
     
     @IBAction func menuTapped(_ sender: UIButton) {
@@ -53,11 +55,24 @@ class ViewController: UIViewController {
     //MARK: - func
     
     func getProducts() {
-        Manager.shared.fetchAllProducts { [weak self] prosucts in
-            self?.products = prosucts
+        Manager.shared.fetchAllProducts { [weak self] productsArray in
+            self?.allProducts = productsArray
+            self?.products = productsArray
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
             }
+        }
+    }
+    
+    func filter(by text: String) {
+        if searchTextField.text != "" {
+            products = allProducts.filter { product in
+                product.title.contains(text)
+            }
+            collectionView.reloadData()
+        } else {
+            products = allProducts
+            collectionView.reloadData()
         }
     }
 }
