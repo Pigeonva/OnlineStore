@@ -13,10 +13,13 @@ class ViewController: UIViewController {
     //MARK: - IBOutlets
     
     @IBOutlet weak var searchTextField: UITextField!
-    
     @IBOutlet weak var cartButton: UIButton!
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var categoriesTableView: UITableView!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     
     //MARK: - let/var
     
@@ -28,15 +31,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cartButton.layer.cornerRadius = cartButton.frame.width / 2
         getProducts()
+        adjustUI()
         collectionView.delegate = self
         collectionView.dataSource = self
         
         searchTextField.delegate = self
         searchTextField.delegate = self
-        
-        
     }
     
     //MARK: - IBActions
@@ -48,14 +49,38 @@ class ViewController: UIViewController {
     }
     
     @IBAction func menuTapped(_ sender: UIButton) {
-        
+        widthConstraint.constant = self.view.frame.width / 2
+        self.blurView.isHidden = false
+        UIView.animate(withDuration: 0.3) {
+            self.menuView.isHidden = false
+            self.view.layoutIfNeeded()
+        }
     }
     
     @IBAction func cartTapped(_ sender: UIButton) {
         print(products.count)
     }
+    @IBAction func closeMenuTapped(_ sender: UIButton) {
+        self.blurView.isHidden = true
+        self.widthConstraint.constant = 0
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            self.menuView.isHidden = true
+        }
+    }
+    @IBAction func loginTapped(_ sender: UIButton) {
+        
+    }
     
     //MARK: - func
+    
+    func adjustUI() {
+        cartButton.layer.cornerRadius = cartButton.frame.width / 2
+        blurView.isHidden = true
+        widthConstraint.constant = 0
+        menuView.isHidden = true
+    }
     
     func getProducts() {
         Manager.shared.fetchAllProducts { [weak self] productsArray in
