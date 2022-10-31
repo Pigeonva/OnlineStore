@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35921A812910265A00F2D0B0 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A802910265900F2D0B0 /* CategoriesModel.swift */; };
+		35921A8329102A5500F2D0B0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A8229102A5500F2D0B0 /* TableViewCell.swift */; };
 		3599F73529054A8F007A8D29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3599F73429054A8F007A8D29 /* AppDelegate.swift */; };
 		3599F73929054A8F007A8D29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3599F73829054A8F007A8D29 /* ViewController.swift */; };
 		3599F73C29054A8F007A8D29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3599F73A29054A8F007A8D29 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35921A802910265900F2D0B0 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
+		35921A8229102A5500F2D0B0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		3599F73129054A8F007A8D29 /* OnlineStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3599F73429054A8F007A8D29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3599F73829054A8F007A8D29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +74,9 @@
 				3599F73429054A8F007A8D29 /* AppDelegate.swift */,
 				3599F73829054A8F007A8D29 /* ViewController.swift */,
 				3599F74E2905EA91007A8D29 /* CollectionViewCell.swift */,
+				35921A8229102A5500F2D0B0 /* TableViewCell.swift */,
 				3599F74A29058DCE007A8D29 /* ProductModel.swift */,
+				35921A802910265900F2D0B0 /* CategoriesModel.swift */,
 				3599F74C29058EBF007A8D29 /* Manager.swift */,
 				3599F73A29054A8F007A8D29 /* Main.storyboard */,
 				3599F73D29054A93007A8D29 /* Assets.xcassets */,
@@ -94,7 +100,6 @@
 				C03D10D28B39F892A9C7E324 /* Pods-OnlineStore.debug.xcconfig */,
 				5E728067D55B9E2B86CA5963 /* Pods-OnlineStore.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -218,6 +223,8 @@
 				3599F74B29058DCE007A8D29 /* ProductModel.swift in Sources */,
 				3599F73529054A8F007A8D29 /* AppDelegate.swift in Sources */,
 				3599F74D29058EBF007A8D29 /* Manager.swift in Sources */,
+				35921A8329102A5500F2D0B0 /* TableViewCell.swift in Sources */,
+				35921A812910265A00F2D0B0 /* CategoriesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

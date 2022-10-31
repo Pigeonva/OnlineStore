@@ -101,13 +101,31 @@
                                             <constraint firstAttribute="width" constant="210" id="wBa-Lk-EnS"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rQO-zN-tHF">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTable" id="rQO-zN-tHF" customClass="TableViewCell" customModule="OnlineStore" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="44.5" width="210" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rQO-zN-tHF" id="cgc-UL-tsv">
                                                     <rect key="frame" x="0.0" y="0.0" width="210" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQS-BT-0mZ">
+                                                            <rect key="frame" x="26" y="11.5" width="158" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ZQS-BT-0mZ" firstAttribute="centerY" secondItem="cgc-UL-tsv" secondAttribute="centerY" id="Bqj-KE-sM9"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="ZQS-BT-0mZ" secondAttribute="trailing" constant="10" id="U9i-nj-8FI"/>
+                                                        <constraint firstItem="ZQS-BT-0mZ" firstAttribute="leading" secondItem="cgc-UL-tsv" secondAttribute="leadingMargin" constant="10" id="V8E-aI-QAG"/>
+                                                        <constraint firstItem="ZQS-BT-0mZ" firstAttribute="centerX" secondItem="cgc-UL-tsv" secondAttribute="centerX" id="ZTy-az-lYK"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="categoriesLabel" destination="ZQS-BT-0mZ" id="SZy-BH-xBw"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

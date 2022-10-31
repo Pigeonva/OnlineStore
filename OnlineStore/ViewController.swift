@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     var allProducts: [ProductModel] = []
     var products: [ProductModel] = []
+    var categories: Categories = []
     
     //MARK: - Lifecycle methods
     
@@ -32,12 +33,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         getProducts()
+        getCategories()
         adjustUI()
         collectionView.delegate = self
         collectionView.dataSource = self
         
         searchTextField.delegate = self
         searchTextField.delegate = self
+        
+        categoriesTableView.delegate = self
+        categoriesTableView.dataSource = self
     }
     
     //MARK: - IBActions
@@ -88,6 +93,15 @@ class ViewController: UIViewController {
             self?.products = productsArray
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
+            }
+        }
+    }
+    
+    func getCategories() {
+        Manager.shared.fetchCategories { [weak self] categoriesArray in
+            self?.categories = categoriesArray
+            DispatchQueue.main.async {
+                self?.categoriesTableView.reloadData()
             }
         }
     }
@@ -145,4 +159,20 @@ extension ViewController: UITextFieldDelegate {
             }
         })
     }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        categories.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellTable", for: indexPath) as? TableViewCell else { return UITableViewCell() }
+        cell.categoriesLabel.text = categories[indexPath.row]
+        
+        return cell
+    }
+    
 }
